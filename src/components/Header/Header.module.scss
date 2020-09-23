@@ -1,0 +1,49 @@
+@import '../../global/variables.scss';
+
+.Header {
+  border: 0.2rem solid $colorSecondary2;
+  border-radius: 0.4rem;
+  // margin: 1.5rem 0;
+  padding: 0.2rem 0.4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .Logo {
+    // padding: 0.4rem;
+    
+    .LogoText {
+      font-family: $fontBold;
+      line-height: 0.8;
+      font-size: 2rem;
+      color: $colorSecondary2;
+      text-transform: uppercase;
+
+      &.Text2 {
+        padding-left: 0.5rem;
+      }
+      &.Text3 {
+        padding-left: 1rem;
+      }
+    }
+  }
+  .Score {
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    border-radius: 0.4rem;
+    background-color: $colorSecondary2;
+
+    .Text {
+      text-transform: uppercase;
+      color: $colorPrimary2;
+      font-weight: 500;
+      // padding-bottom: 0.1rem;
+    }
+    .Value {
+      font-size: 3rem;
+      font-weight: 900;
+      color: $colorBlack;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../global/variables.scss';
+
+.LogoCard {
+  padding: 0.5rem;
+
+  .Back {
+    display: inline-block;
+    // border-radius: 50%;
+    // overflow: hidden;
+    border: 1px solid red;
+  }
+}
