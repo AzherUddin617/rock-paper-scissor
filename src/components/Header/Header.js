@@ -12,7 +12,7 @@ const Header = ({ score }) => {
 
       <div className={classes.Score}>
         <p className={classes.Text}>Score</p>
-        <p className={classes.Value}>{score}</p>
+        <p className={classes.Value}>{score > 9 ? score : '0'+score}</p>
       </div>
     </header>
   );

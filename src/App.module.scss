@@ -1,0 +1,126 @@
+@import './global/variables.scss';
+
+.App {
+  padding: 2rem 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .MainArea {
+    height: 100%;
+    position: relative;
+
+    .LogoCard {
+      $animDuration: 0.6s;
+      position: absolute;
+      // width: 10rem;
+      // height: 10rem;
+      top: 50%;
+      left: 50%;
+      transform-origin: 50% 50%;
+      transform: translate(-50%, -50%);
+      // transition: transform 0.5s ease;
+
+      
+      &.Selected {
+        animation: cardsAnim $animDuration ease forwards;
+        
+        &.Active {
+          z-index: 1;
+        }
+      }
+      &.Result {
+        animation: cardsAnimLeft $animDuration ease forwards;
+
+        &.Right {
+          opacity: 1;
+          animation: cardsAnimRight $animDuration ease forwards;
+        }
+      }
+
+      $exTrans: 80%;
+
+      &.Card1 {
+        // animation: cardsAnimLeft 2s ease forwards;
+        // animation-delay: 2s;
+        transform: translate(-50%, calc(0% - #{$exTrans}));
+      }
+      &.Card2 {
+        transform: translate(calc(-50% - #{$exTrans}), -0%);
+      }
+      &.Card3 {
+        // animation: cardsAnimRight 2s ease forwards;
+        // animation-delay: 2s;
+        transform: translate(calc(-50% + #{$exTrans}), -0%);
+      }
+      &.Right {
+        z-index: -1;
+        transform: translate(-50%, -100%);
+        opacity: 0;
+      }
+    }
+    .ResultShow {
+      position: absolute;
+      width: 100%;
+      bottom: 1rem;
+      left: 0;
+      text-align: center;
+      opacity: 0;
+      transition: none;
+      
+      &.Show {
+        transition: opacity 0.5s ease;
+        opacity: 1;
+      }
+      
+      .ResultText {
+        font-size: 2.4rem;
+        
+        &.Win {
+          color: $colorWhite;
+        }
+        &.Lose {
+          color: crimson;
+        }
+      }
+      .RetryButton {
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 2.3rem;
+        padding: 0.2rem 1rem;
+        color: $colorSecondary;
+        border-radius: 0.4rem;
+        background-color: $colorSecondary2;
+        opacity: 0.8;
+        cursor: pointer;
+        transition: opacity 0.4s ease;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@keyframes cardsAnim {
+  100% {
+    transform: translate(-50%, -100%);
+  }
+}
+@keyframes cardsAnimLeft {
+  0% {
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    transform: translate(-150%, -100%);
+  }
+}
+@keyframes cardsAnimRight {
+  0% {
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    transform: translate(50%, -100%);
+  }
+}
